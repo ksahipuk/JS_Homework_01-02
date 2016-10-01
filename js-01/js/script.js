@@ -1,8 +1,6 @@
 function pow(y, n) {
     var powResult = 1;
-
-    if (y === "number" && n === "number") {
-        if (n % 1 == 0) {
+    if (n % 1 == 0) {
             if (n < 0) {
                 for (var i = n; i < 0; i++) {
                     powResult = powResult * y;
@@ -16,15 +14,18 @@ function pow(y, n) {
                 }
                 return (powResult);
             }
-        } else {
-            alert( 'Дробные степени не поддерживаются' )
-        }
-    } else {
+        }  else {
     alert( 'Ошибка! Введите целое число' )
     }
 }
 
-var y = prompt( 'Введите число' );
-var n = prompt( 'Введите степень' );
+var y = +prompt('Введите число');
+    n = +prompt('Введите степень');
 
-console.log(y + ' в степени ' + n + ' = ' + pow(y, n));
+if (isNaN(n)) {
+    alert('Ошибка! Введено не число');
+} else if (isNaN(y)) {
+    alert('Ошибка! Введено не число')
+} else {
+    console.log(y + ' в степени ' + n + ' = ' + pow(y, n));
+}
