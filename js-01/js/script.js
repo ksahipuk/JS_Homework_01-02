@@ -20,7 +20,7 @@ function pow(y, n) {
 }
 
 var y = +prompt('Введите число');
-    n = +prompt('Введите степень');
+var n = +prompt('Введите степень');
 
 if (isNaN(n)) {
     alert('Ошибка! Введено не число');
